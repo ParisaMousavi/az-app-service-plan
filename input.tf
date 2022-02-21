@@ -9,10 +9,6 @@ variable "resource_long_name" {
   description = "(provided by Terragrunt)"
 }
 
-variable "feature_short" {
-  type        = string
-  description = "(provided by Terragrunt)"
-}
 
 variable "resource_group_name" {
   type        = string
