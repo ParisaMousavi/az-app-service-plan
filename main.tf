@@ -6,8 +6,8 @@ resource "azurerm_app_service_plan" "default" {
   kind                = "app"
   // reserved            = true // for Linux
   sku {
-    tier = "PremiumV2"
-    size = "P1v2"
+    tier     = "PremiumV2"
+    size     = "P1v2"
     capacity = 1
   }
 }
