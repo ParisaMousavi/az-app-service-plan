@@ -1,21 +1,33 @@
-//
-// this file will be overwritten by terragrunt
-//
-// used only for unit tests - hence no defaults
-//
-
-variable "resource_long_name" {
-  type        = string
-  description = "(provided by Terragrunt)"
+variable "name" {
+  type = string
 }
-
 
 variable "resource_group_name" {
-  type        = string
-  description = "(provided by Terragrunt)"
+  type = string
 }
 
-variable "resource_group_location" {
-  type        = string
-  description = "(provided by Terragrunt)"
+variable "location" {
+  type = string
+}
+
+variable "additional_tags" {
+  default     = {}
+  description = "Additional resource tags"
+  type        = map(string)
+}
+
+variable "sku" {
+  type = object({
+    tier     = string
+    size     = string
+    capacity = number
+  })
+}
+
+variable "kind" {
+  type = string
+  validation {
+    condition = contains(["elastic", "app", "functionapp"], var.kind)
+    error_message = "Allowed values are elastic, app, functionapp."
+  }
 }
