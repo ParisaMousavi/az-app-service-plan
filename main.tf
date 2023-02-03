@@ -12,7 +12,7 @@ resource "azurerm_app_service_plan" "this" {
   tags = merge(
     var.additional_tags,
     {
-      created-by = "terraform"
+      created-by = "iac-tf"
     },
   )
 
