@@ -16,18 +16,20 @@ variable "additional_tags" {
   type        = map(string)
 }
 
-variable "sku" {
-  type = object({
-    tier     = string
-    size     = string
-    capacity = number
-  })
-}
-
-variable "kind" {
+variable "os_type" {
   type = string
   validation {
-    condition     = contains(["elastic", "app", "functionapp"], var.kind)
-    error_message = "Allowed values are elastic, app, functionapp."
+    condition     = contains(["Windows", "Linux", "WindowsContainer"], var.kind)
+    error_message = "Allowed values are Windows, Linux, and WindowsContainer."
   }
 }
+
+variable "worker_count" {
+  type = number
+}
+
+variable "sku_name" {
+  type    = string
+  default = "F1"
+}
+
