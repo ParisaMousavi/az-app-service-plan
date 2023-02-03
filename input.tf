@@ -27,7 +27,7 @@ variable "sku" {
 variable "kind" {
   type = string
   validation {
-    condition = contains(["elastic", "app", "functionapp"], var.kind)
+    condition     = contains(["elastic", "app", "functionapp"], var.kind)
     error_message = "Allowed values are elastic, app, functionapp."
   }
 }

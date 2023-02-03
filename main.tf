@@ -8,7 +8,7 @@ resource "azurerm_app_service_plan" "default" {
     tier     = var.sku.tier
     size     = var.sku.size
     capacity = var.sku.capacity
-    }
+  }
   tags = merge(
     var.additional_tags,
     {
