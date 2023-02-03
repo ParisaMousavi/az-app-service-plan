@@ -19,7 +19,7 @@ variable "additional_tags" {
 variable "os_type" {
   type = string
   validation {
-    condition     = contains(["Windows", "Linux", "WindowsContainer"], var.kind)
+    condition     = contains(["Windows", "Linux", "WindowsContainer"], var.os_type)
     error_message = "Allowed values are Windows, Linux, and WindowsContainer."
   }
 }
